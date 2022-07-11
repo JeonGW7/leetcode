@@ -3,16 +3,16 @@ class Solution {
         if(k<=1) return 0;
         
         int answer=0;
-        int prod=1;
+        int tmp=1;
         
         int left=0;
         int right=0;
         
         while(right<nums.length){
-            prod*=nums[right];
+            tmp*=nums[right];
             
-            while(prod>=k){
-                prod/=nums[left];
+            while(tmp>=k){
+                tmp/=nums[left];
                 left++;
             } 
             answer+=right-left+1;
