@@ -5,18 +5,18 @@ class Solution {
         int answer=0;
         int tmp=1;
         
-        int left=0;
-        int right=0;
+        int start=0;
+        int end=0;
         
-        while(right<nums.length){
-            tmp*=nums[right];
+        while(end<nums.length){
+            tmp*=nums[end];
             
             while(tmp>=k){
-                tmp/=nums[left];
-                left++;
+                tmp/=nums[start];
+                start++;
             } 
-            answer+=right-left+1;
-            right++;
+            answer+=end-start+1;
+            end++;
         }
         return answer;
     }
